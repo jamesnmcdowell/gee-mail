@@ -25,14 +25,10 @@ export default {
   .search-bar {
     width: calc(100% - 66px);
     height: 32px;
-
-
   }
   input[type="text"] {
     font-size:1.1em;
   }
-
-
   .search-button {
     background-color: #3C7BF4;
     width:60px;

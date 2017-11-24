@@ -4,7 +4,7 @@
       <input type="checkbox" >
       <span class="checkmark"></span>
     </label>
-    <div @click="callSelectMail" class="row">
+    <div @click="callSelectMail" class="row-inner">
       <div class="flex sender">{{ rowData.sender }} </div>
       <div class="flex subject">{{ rowData.subject}} </div>
       <div class="flex body">{{ rowData.body }} </div>
@@ -36,6 +36,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+
 .row {
   display: flex;
   flex-direction: row;
@@ -51,62 +52,61 @@ export default {
     flex-direction: column;
     display: flex;
     &.container {
-        margin-top: 4px;
-    }
+      margin-top: 4px;
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 22px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      &:hover input ~ .checkmark {
+          background-color: #ccc;
+      }
+      input:checked ~ .checkmark {
+          background-color: #2196F3;
+      }
+      input:checked ~ .checkmark:after {
+          display: block;
+      }
+      input {
+          position: absolute;
+          opacity: 0;
+      }
+      .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 15px;
+          width: 15px;
+          background-color: #eee;
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 4px;
+            top: 0px;
+            width: 4px;
+            height: 9px;
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+      }
   }
+  }
+ .row-inner {
+   display: flex;
+   flex-direction: row;
 
   .flex {
     flex: 1;
     overflow: hidden;
   }
 }
-
-
-
-.container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    &:hover input ~ .checkmark {
-        background-color: #ccc;
-    }
-    input:checked ~ .checkmark {
-        background-color: #2196F3;
-    }
-    input:checked ~ .checkmark:after {
-        display: block;
-    }
-    input {
-        position: absolute;
-        opacity: 0;
-    }
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 15px;
-        width: 15px;
-        background-color: #eee;
-        &:after {
-          content: "";
-          position: absolute;
-          display: none;
-          left: 4px;
-          top: 0px;
-          width: 4px;
-          height: 9px;
-          border: solid white;
-          border-width: 0 3px 3px 0;
-          -webkit-transform: rotate(45deg);
-          -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-        }
-    }
 }
 </style>

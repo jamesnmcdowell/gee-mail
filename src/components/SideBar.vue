@@ -11,7 +11,7 @@
 <script>
 export default {
   name: 'SideBar',
-  props: ['inboxCount','inboxBack'],
+  props: ['inboxCount'],
   methods: {
     viewMailList: function () {
       this.$emit('viewMailList');
@@ -42,6 +42,7 @@ export default {
     margin-bottom: 1em;
     text-transform: uppercase;
     width: 110px;
+    margin-bottom: 1em;
   }
 
 div.flex {
@@ -59,11 +60,4 @@ div.flex {
 
 }
 }
-
-button {
-  margin-bottom: 1em;
-
-}
-
-
 </style>

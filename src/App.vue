@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 import MailRow from './components/MailRow'
 import SideBar from './components/SideBar'
 import SearchBar from './components/SearchBar'
@@ -30,7 +29,6 @@ let genMail = mailGenerator();
 export default {
   name: 'app',
   components: {
-    HelloWorld,
     MailRow,
     SideBar,
     SearchBar,
@@ -92,23 +90,7 @@ html, body {
 		color: #2c3e50;
 		width: 100%;
 		height: 100%;
-		header {
-			color: white;
-			font-weight: 600;
-			.header1 {
-				border-bottom: 1px solid #A8A8A8;
-				padding: .5rem;
-				h1 {
-					margin: 0;
-					padding-right: 2em;
-				}
-			}
-			.header2 {
-				border-bottom: 1px solid #A8A8A8;
-				padding: 1rem;
-				display: flex;
-			}
-		}
+
 		.flexbox-container {
 			display: flex;
 			width: 100%;
@@ -127,43 +109,6 @@ html, body {
 					.active {
 						height: 100vh;
 						background-color: #FFFFFF;
-						h3 {
-							border-bottom: 1px solid #A8A8A8;
-							padding: .5em .6em;
-							font-weight: 400;
-							margin-bottom: 0;
-              margin-top: 0;
-						}
-						.align-lr {
-							justify-content: space-between;
-							display: flex;
-							padding: 0 .7em;
-							margin-top: .5em;
-							.sender-info {
-								display: flex;
-								img {
-									width: 30px;
-									height: 30px;
-									margin-right: 10px;
-								}
-								p {
-									margin: 0;
-									&.sender {
-										font-weight: 600;
-									}
-								}
-							}
-							.date {
-								margin-right: 40px;
-								margin-bottom: 0;
-								margin-top: 0;
-							}
-						}
-						.body {
-							padding: 0 3.2em;
-							border-bottom: 1px solid #A8A8A8;
-							padding-bottom: 3em;
-						}
 					}
 				}
 			}
