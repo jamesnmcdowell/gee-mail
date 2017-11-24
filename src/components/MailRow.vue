@@ -4,10 +4,12 @@
       <input type="checkbox" >
       <span class="checkmark"></span>
     </label>
-    <div class="flex sender">{{ rowData.sender }} </div>
-    <div class="flex subject">{{ rowData.subject}} </div>
-    <div class="flex body">{{ rowData.body }} </div>
-    <div class="flex date">{{ rowData.date.toDateString() }} </div>
+    <div @click="callSelectMail" class="row">
+      <div class="flex sender">{{ rowData.sender }} </div>
+      <div class="flex subject">{{ rowData.subject}} </div>
+      <div class="flex body">{{ rowData.body }} </div>
+      <div class="flex date">{{ rowData.date.toDateString() }} </div>
+    </div>
   </div>
 </template>
 
@@ -24,6 +26,9 @@ export default {
       s = s.substring(0, n != -1 ? n : s.length);
       return s;
     },
+    callSelectMail: function () {
+      this.$emit('selectMail',this.rowData);
+    }
   }
 }
 

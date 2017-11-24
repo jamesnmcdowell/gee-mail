@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <button class="flex"> Compose </button>
-    <div class="flex">Inbox ({{inboxCount}}) </div>
+    <div @click="viewMailList" class="flex">Inbox ({{inboxCount}}) </div>
     <div class="flex">Important </div>
     <div class="flex">Sent Mail </div>
     <div class="flex">Drafts </div>
@@ -11,7 +11,12 @@
 <script>
 export default {
   name: 'SideBar',
-  props: ['inboxCount'],
+  props: ['inboxCount','inboxBack'],
+  methods: {
+    viewMailList: function () {
+      this.$emit('viewMailList');
+    }
+  }
 }
 </script>
 
@@ -33,9 +38,10 @@ export default {
     text-transform: uppercase;
     font-size: 12px;
     text-align: center;
-    padding: 1em 0;
+    padding: .6em 0;
     margin-bottom: 1em;
     text-transform: uppercase;
+    width: 110px;
   }
 
 div.flex {
