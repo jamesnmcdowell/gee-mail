@@ -1,6 +1,8 @@
 # gee-mail
 
-> Building a a remarkably similar email inbox lo to gmail using vue.js  
+> Building a a remarkably similar email inbox to gmail using vue.js  
+
+
 
 
 ## Build Setup
